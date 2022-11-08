@@ -9,6 +9,7 @@ import java.util.List;
 public class FindPositiveNumbersTest {
     List<Integer> numbers;
     List<Integer> expectedPositiveNumbers;
+
     @Before
     public void initListWithNumbers() {
         numbers = new ArrayList<>();
@@ -21,6 +22,7 @@ public class FindPositiveNumbersTest {
 
     }
 
+
     @Before
     public void generateExpectedValue() {
         expectedPositiveNumbers = new ArrayList<>();
@@ -32,6 +34,8 @@ public class FindPositiveNumbersTest {
 
     @Test
     public void findAllPositiveNumbersAndSortThemByDescendingOrderTest() {
-        Assert.assertEquals(expectedPositiveNumbers, PositiveNumbers.findPositiveNumbers(numbers));
+        Assert.assertEquals(expectedPositiveNumbers, PositiveNumbers.findPositiveNumbers(null));
     }
+
+
 }
