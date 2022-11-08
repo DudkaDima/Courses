@@ -15,8 +15,9 @@ public class Pyramid implements Shape {
         this.height = height;
     }
 
-    public double volume() {
-        return (int) (baseArea * height);
+    @Override
+    public double getVolume() {
+        return  (baseArea * height);
     }
 
     @Override
@@ -35,7 +36,7 @@ public class Pyramid implements Shape {
     @Override
     public String toString() {
         return "Pyramid{" +
-                "volume=" + volume() +
+                "volume=" + getVolume() +
                 '}';
     }
 }

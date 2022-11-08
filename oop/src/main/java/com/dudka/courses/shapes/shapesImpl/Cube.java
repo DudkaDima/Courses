@@ -10,9 +10,9 @@ public class Cube implements Shape {
     public Cube(double edgeLength) {
         this.edgeLength = edgeLength;
     }
-
-    public double volume() {
-       return (int) Math.pow(edgeLength, 3);
+    @Override
+    public double getVolume() {
+       return Math.pow(edgeLength, 3);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Cube implements Shape {
 
     public String toString() {
         return "Cube{" +
-                "volume=" + volume() +
+                "volume=" + getVolume() +
                 '}';
     }
 }

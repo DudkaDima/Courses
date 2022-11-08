@@ -14,8 +14,8 @@ public class Ball implements Shape {
     }
 
     @Override
-    public double volume() {
-        return radius * PI * (4.0/3.0);
+    public double getVolume() {
+        return radius * Math.PI * (4.0/3.0);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Ball implements Shape {
 
     public String toString() {
         return "Ball{" +
-                "volume=" + volume() +
+                "volume=" + getVolume() +
                 '}';
     }
 }
