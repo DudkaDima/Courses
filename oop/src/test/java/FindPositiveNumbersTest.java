@@ -34,7 +34,7 @@ public class FindPositiveNumbersTest {
 
     @Test
     public void findAllPositiveNumbersAndSortThemByDescendingOrderTest() {
-        Assert.assertEquals(expectedPositiveNumbers, PositiveNumbers.findPositiveNumbers(null));
+        Assert.assertEquals(expectedPositiveNumbers, PositiveNumbers.findPositiveNumbers(numbers));
     }
 
 
