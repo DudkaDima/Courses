@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ParseXml {
-    public void parseXmlWithPersons() {
+    public static void parseXmlWithPersons() {
         try (InputStream inputStream = Main.class.getResourceAsStream("/persons/person.xml");
              FileWriter myWriter = new FileWriter("persons.xml")) {
             Scanner scanner = new Scanner(Objects.requireNonNull(inputStream), "UTF-8");
