@@ -1,6 +1,5 @@
 package com.dudka.io.task2.parseFineToTotalFines;
 
-import ch.lambdaj.Lambda;
 import com.dudka.io.task2.calculateFineAmountByType.CalculateFine;
 import com.dudka.io.task2.entity.Fine;
 
@@ -16,16 +15,15 @@ public class TotalFinesParser {
 
     public static List<CalculateFine> calculateFines(List<Fine> fines) {
         List<CalculateFine> calculateFines = new ArrayList<>();
-        List<String> typeOfFines = Lambda.extract(fines, Lambda.on(Fine.class).getType()).stream().distinct().collect(Collectors.toList());
-
-        for (String typeOfFine : typeOfFines) {
-            double sumOfFines = 0.00;
+        List<String> finesType = fines.stream().map(Fine::getType).distinct().collect(Collectors.toList());
+        for (String typeOfFine : finesType) {
+            double finesSum = 0.00;
             for (Fine fine : fines) {
                 if (fine.getType().equals(typeOfFine)) {
-                    sumOfFines += fine.getFineAmount();
+                    finesSum += fine.getFineAmount();
                 }
             }
-            calculateFines.add(new CalculateFine(Double.valueOf(NUMBER_FORMAT.format(sumOfFines)), typeOfFine));
+            calculateFines.add(new CalculateFine(Double.valueOf(NUMBER_FORMAT.format(finesSum)), typeOfFine));
         }
         return calculateFines.stream().sorted(Comparator.comparing(CalculateFine::getFullFineAmount).reversed()).collect(Collectors.toList());
     }
