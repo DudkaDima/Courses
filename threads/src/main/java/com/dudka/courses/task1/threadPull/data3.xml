@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fines>
+    <fine name="Dima" lastname="Dudka" date = "2022-07-01 22:12:24" type = "SPEEDING" fine_amount="340.10"/>
+    <fine name="Nick" lastname="DSAS" date = "2021-02-01 12:45:06" type = "SPEEDING" fine_amount="340.22"/>
+    <fine name="Josh" lastname="Johnson" date = "2019-05-05 05:39:03" type = "SPEEDING" fine_amount="340.00"/>
+    <fine name="Francis" lastname="Gallagher" date = "2018-05-02 12:32:02" type = "SPEEDING" fine_amount="340.00"/>
+    <fine name="Mikk" lastname="Milkovich" date = "2020-03-09 13:57:13" type = "SPEEDING" fine_amount="340.00"/>
+    <fine name="Mike" lastname="Myers" date = "2020-03-09 13:57:13" type = "DRUNK_DRIVING" fine_amount="1000.25"/>
+    <fine name="Hank" lastname="Billers" date = "2018-01-01 12:50:13" type = "DRUNK_DRIVING" fine_amount="1000.22"/>
+</fines>
