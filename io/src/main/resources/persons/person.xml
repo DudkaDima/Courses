@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+    <person surname="Sd"
+            name="aaa"
+            birthday = "09.03.1814"/>
+
+    <person name="dima" surname="ssss" birthday = "09.03.1814"/>
+
+</persons>
