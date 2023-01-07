@@ -13,6 +13,7 @@
         <module>io</module>
         <module>threads</module>
         <module>servlets</module>
+        <module>databases</module>
     </modules>
 
     <properties>
