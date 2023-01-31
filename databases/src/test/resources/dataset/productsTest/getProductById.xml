@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <type
+            id="1"
+            type_name="kitchen"
+    />
+    <product
+            id="1"
+            product_name="plate"
+            production_year="2022"
+            price="220.2"
+            status="true"
+            type_id="1"
+    />
+
+    <product
+            id="2"
+            product_name="coffee"
+            production_year="2022"
+            price="2220.2"
+            status="true"
+            type_id="1"
+    />
+</dataset>
