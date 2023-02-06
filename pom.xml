@@ -14,7 +14,7 @@
         <module>threads</module>
         <module>servlets</module>
         <module>databases</module>
-        <module>react</module>
+        <module>reactCalculator</module>
     </modules>
 
     <properties>
