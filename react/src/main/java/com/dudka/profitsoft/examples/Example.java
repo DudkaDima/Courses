@@ -1,4 +1,4 @@
-package com.dudka.profitsoft.tasks;
+package com.dudka.profitsoft.examples;
 
 import java.util.ArrayList;
 import java.util.Arrays;
