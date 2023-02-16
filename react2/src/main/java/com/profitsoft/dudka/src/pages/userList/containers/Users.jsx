@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import usersActions from 'pages/userList/actions/getUsers'
-import { Button } from '@material-ui/core';
+import { Button, ButtonGroup } from '@material-ui/core';
+import Link from 'components/Link';
+import * as PAGES from 'constants/pages';
 
 class Users extends React.Component  {
   constructor() {
@@ -12,28 +14,67 @@ class Users extends React.Component  {
   }
   componentDidMount(){
     const {
-      userList,
       dispatch,
   } = this.props;
+    usersActions.fetchUsers({})(dispatch)
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
     const {
-      userList,
-  } = this.props;
-  console.log(userList)
-  console.log(userList.userlist[0].firstName)
-  console.log(userList.name)
-  console.log(userList.isLoading)
+      dispatch,
+  } = this.props; 
 } 
   render() {
     const {
       dispatch,
+      userList,
   } = this.props;
   return (
     <div> 
-      <Button onClick={() => usersActions.fetchUsers({})(dispatch)}>Pizda</Button>
-    </div>
-  )
+      
+        <h2 className="text-center"> List Users </h2>
+            <Link to="/createUser"> Add User </Link>
+            <table className="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Login</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    userList.userlist.map(
+                        user =>
+                            <tr key={user.id}>
+                                <td style={{whiteSpace: 'nowrap'}}>{user.login}</td>
+                                <td>{user.email}</td>
+                                <td>{user.firstName}</td>
+                                <td>{user.lastName}</td>
+                             
+                                
+                                  
+                              
+                                
+
+                                <Link to={(location => ({
+                                    ...location, 
+                                    pathname: "/" + PAGES.UPDATEUSER, 
+                                    search: '' + location.search + '&id=' + user.id 
+                                }))}>
+                                  Jopa
+                                </Link>
+                               
+                            </tr>
+                    )
+                }
+                
+                </tbody>
+            </table>
+        </div>
+    )
+
   }
 }
   const mapReduxStatetoProps = reduxState => ({

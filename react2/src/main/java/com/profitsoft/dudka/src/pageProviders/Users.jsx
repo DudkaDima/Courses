@@ -5,7 +5,6 @@ import UsersPage from 'pages/userList'
 import PageContainer from 'components/PageContainer';
 
 const Users = () => {
-  const user = useSelector(({ user }) => user);
 
   return (
     <UsersPageAccessValidator>

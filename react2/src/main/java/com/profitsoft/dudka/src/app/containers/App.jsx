@@ -11,6 +11,7 @@ import Header from 'components/Header';
 import PageInitial from 'pageProviders/Initial';
 import PageLogin from 'pageProviders/Login';
 import PageUsers from 'pageProviders/Users'
+import PageUpdateUser from 'pageProviders/UpdateUser'
 import * as PAGES from 'constants/pages';
 import {
   fetchUser,
@@ -44,6 +45,12 @@ const App = () => {
               </Route>
               <Route path={`/${PAGES.USERS}`}>
                 <PageUsers />
+              </Route>
+              <Route path={`/${PAGES.UPDATEUSER}`} >
+                <PageUpdateUser />
+              </Route>
+              <Route path={`/${PAGES.CREATEUSER}`} >
+                <PageUpdateUser />
               </Route>
               <Redirect from="*" to={`/${PAGES.INITIAL}`} />
             </Switch>
