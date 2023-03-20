@@ -1,5 +1,6 @@
 package com.profitsoft.dudka.dto;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.profitsoft.dudka.model.MailStatus;
 import lombok.Builder;
@@ -12,13 +13,11 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Jacksonized
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class MessageDetailsDto {
+public class NotSentMailDto {
 
-    private String _id;
+    private String fromMail;
 
-    private String fromEmail;
-
-    private String toEmail;
+    private String toMail;
 
     private String subject;
 

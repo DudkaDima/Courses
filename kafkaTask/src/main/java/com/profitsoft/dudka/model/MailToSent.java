@@ -1,8 +1,7 @@
 package com.profitsoft.dudka.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.jackson.Jacksonized;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
@@ -18,6 +18,7 @@ import org.springframework.data.annotation.Id;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Document("MailToSent")
 public class MailToSent {
 
     @Id

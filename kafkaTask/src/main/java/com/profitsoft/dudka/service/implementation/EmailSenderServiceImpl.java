@@ -6,7 +6,10 @@ import com.profitsoft.dudka.model.MailStatus;
 import com.profitsoft.dudka.model.MailToSent;
 import com.profitsoft.dudka.repository.EmailSenderRepository;
 import com.profitsoft.dudka.service.EmailSenderService;
+import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,14 +18,26 @@ import java.util.Optional;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class EmailSenderServiceImpl implements EmailSenderService {
 
+    @Autowired
     private final EmailSenderRepository emailSenderRepository;
 
     @Autowired
-    public EmailSenderServiceImpl(EmailSenderRepository emailSenderRepository) {
-        this.emailSenderRepository = emailSenderRepository;
+    private final MongoTemplate mongoTemplate;
+
+    @PostConstruct
+    private void createOnStartUp() {
+        if (!mongoTemplate.collectionExists(MailToSent.class)) {
+            mongoTemplate.createCollection(MailToSent.class);
+        } else {
+            mongoTemplate.dropCollection(MailToSent.class);
+            mongoTemplate.createCollection(MailToSent.class);
+        }
     }
+
+
 
     @Override
     public String saveSentEmail(SaveSentEmailDto sentEmail) {
@@ -34,7 +49,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
         mailToSent.setStatus(MailStatus.SENT);
         mailToSent.setErrorMessage("");
         MailToSent saved = emailSenderRepository.save(mailToSent);
-        return saved.getId();
+        return saved.get_id();
     }
 
     @Override
@@ -47,7 +62,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
         mailToSent.setStatus(MailStatus.NOT_SENT);
         mailToSent.setErrorMessage("Message cannot be send, try again later!");
         MailToSent saved = emailSenderRepository.save(mailToSent);
-        return saved.getId();
+        return saved.get_id();
     }
 
     @Override

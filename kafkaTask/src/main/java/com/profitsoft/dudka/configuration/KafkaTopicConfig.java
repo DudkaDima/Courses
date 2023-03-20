@@ -12,10 +12,10 @@ import java.util.Map;
 @Configuration
 public class KafkaTopicConfig {
 
-    @Value(value = "${spring.kafka.bootstrap-servers}")
+    @Value("${product.kafkaServer}")
     private String bootstrapAddress;
 
-    @Value("${kafka.topic.sendEmail}")
+    @Value("${topic.name}")
     private String sendEmailTopic;
 
     @Bean

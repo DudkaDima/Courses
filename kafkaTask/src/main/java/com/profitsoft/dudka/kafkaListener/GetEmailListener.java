@@ -8,6 +8,7 @@ import com.profitsoft.dudka.service.EmailSenderService;
 import com.profitsoft.dudka.smtpSender.SmtpService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +20,7 @@ public class GetEmailListener {
     @Autowired
     private final SmtpService smtpService;
 
-    @KafkaListener(topics = "${kafka.topic.sendEmail}")
+    @KafkaListener(topics = "${topic.name}")
     public void sendEmailAndSave(SaveSentEmailDto dto) {
         try{
             smtpService.sendEmail(dto);
