@@ -1,0 +1,1 @@
+To run the application using docker, use the command "docker-compose up"
