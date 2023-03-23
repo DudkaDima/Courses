@@ -17,6 +17,7 @@
         <module>reactCalculator</module>
         <module>react2</module>
         <module>mongoDbTask</module>
+        <module>springCloudSecurityTask</module>
 
     </modules>
 
