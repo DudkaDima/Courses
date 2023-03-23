@@ -18,6 +18,8 @@
         <module>react2</module>
         <module>mongoDbTask</module>
         <module>kafkaTask</module>
+        <module>springCloudSecurityTask</module>
+
 
     </modules>
 
